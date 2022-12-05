@@ -2,7 +2,7 @@
 
 namespace ChefChallege.Migrations
 {
-    public partial class InitSqliteDB : Migration
+    public partial class InitDbSqlite : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace ChefChallege.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserName = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: false),
                     Age = table.Column<int>(nullable: false),
                     State = table.Column<string>(nullable: true),
                     Experience = table.Column<string>(nullable: true)

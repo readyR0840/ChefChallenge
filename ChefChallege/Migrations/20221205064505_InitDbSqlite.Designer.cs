@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefChallege.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221204233450_InitSqliteDB")]
-    partial class InitSqliteDB
+    [Migration("20221205064505_InitDbSqlite")]
+    partial class InitDbSqlite
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -174,6 +174,7 @@ namespace ChefChallege.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
