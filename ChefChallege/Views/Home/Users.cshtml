@@ -1,0 +1,30 @@
+﻿@model List<User>;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Users</title>
+    <style></style>
+</head>
+<body>
+    <h4 class="text-center">View Users</h4>
+    <h4><a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="UserSignIn">New User Creation</a></h4>
+    @if (@Model != null)
+    {
+        foreach (User u in @Model)
+        {
+            <div class="container">
+                <div class="row bg-light p-2 m-2">
+                    <p class="col-md-3">Name of User: @u.UserName</p>
+                    <p class="col-md-3">Age: @u.Age</p>
+                </div>
+                <div class="row bg-light p-2 m-2">
+                    <p class="col-md-3">Experience: @u.Experience</p>
+                    <p class="col-md-3">State: @u.State</p>
+                </div>
+            </div>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Index"] = "Challenge Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stories</title>
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4><a class="nav-link text-primary" asp-area="" asp-controller="AddDesert" asp-action="Index">Desert Page</a></h4>
+            </div>
+            <div class="col-md-4">
+                <h4><a class="nav-link text-primary" asp-area="" asp-controller="AddDinner" asp-action="Index">Dinner Page</a></h4>
+            </div>
+            <div class="col-md-4">
+                <h4><a class="nav-link text-primary" asp-area="" asp-controller="AddSoup" asp-action="Index">Soup Page</a></h4>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-center">Chef Challenge</h4>
+    <p>This is the challenge page! We have an ongoing compitition for 3 categories. Feel free to use our recipes, and give them a rating!
+        If you are a new user, choose a category, click add a recipe, and use the required ingredients in your new recipe.</p>
+</body>
+</html>

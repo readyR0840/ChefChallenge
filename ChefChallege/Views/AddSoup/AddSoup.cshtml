@@ -1,0 +1,41 @@
+﻿@model SoupRecipe
+@{
+    ViewData["AddSoupRecipe"] = "Soup Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData</title>
+    <style></style>
+</head>
+<body>
+    <div class="jumbotron bg-secondary">
+        <div class="container bg-secondary text-white-50">
+            <h1 class="text-center"><strong>Create new recipe</strong></h1>
+            <p>Enter ingredients and amounts by adding a comma to seperate them.</p>
+        </div>
+        <form method="post">
+            <div class="container alert-info">
+                <div class="row form-group m-2 p-2">
+                    <div class="col-md-2"><label asp-for="Name"><h6>Name:</h6></label></div>
+                    <div class="col-md-2"><input asp-for="Name" class="form-control" /></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2"><label asp-for="Ingredients"><h6>Enter Ingredients:</h6></label></div>
+                    <div class="col-md-4"><textarea asp-for="Ingredients" class="form-control"></textarea></div>
+
+                    <div class="col-md-2"><label asp-for="Amounts"><h6>Enter Amounts:</h6></label></div>
+                    <div class="col-md-4"><textarea asp-for="Amounts" class="form-control"></textarea></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2"><label asp-for="Instructions"><h6>Enter Instructions:</h6></label></div>
+                    <div class="col-md-4"><textarea asp-for="Instructions" class="form-control"></textarea></div>
+                </div>
+                <button type="submit" class="btn-info">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

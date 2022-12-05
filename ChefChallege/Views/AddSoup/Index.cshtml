@@ -1,0 +1,99 @@
+﻿@model List<SoupRecipe>;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Soup</title>
+    <style></style>
+</head>
+<body>
+    <h4 class="text-center">View Soup Recipes</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <h4><a class="nav-link text-primary" asp-area="" asp-controller="AddSoup" asp-action="AddSoup">Create a Soup Recipe</a></h4>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <form method="get" class="container">
+                <div class="row">
+                    <div class="col-md-4"><label for="Name"><h6>Search by Name:</h6></label></div>
+                    <div class="col-md-4"><input name="Name" class="form-control" /></div>
+                    <div class="col-md-4"><button type="submit" class="btn-info">Submit</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    @if (@Model != null)
+    {
+        foreach (SoupRecipe r in @Model)
+        {
+            <div class="container  border border-dark">
+                <div class="row bg-light m-2">
+                    <h6 class="col-md-6">Name of Recipe:</h6>
+                    <h6 class="col-md-6">Name of User:</h6>
+                </div>
+                <div class="row bg-light m-2">
+                    <h6 class="col-md-6">@r.Name</h6>
+                    <h6 class="col-md-6">@r.User.UserName</h6>
+                </div>
+                <div class="row bg-light m-2">
+                    <p class="col-md-6">Required Ingredients: Cheddar Cheese</p>
+                    <p class="col-md-6">Required Amounts: 3oz</p>
+                </div>
+                <div class="row bg-light m-2">
+                    <p class="col-md-6">Ingredients:</p>
+                    <p class="col-md-6">Amounts:</p>
+                </div>
+                <div class="row bg-light m-2">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        @foreach (string s in r.IngredientsList)
+                        {
+                            <div class="row bg-light">@s</div>
+                        }
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        @foreach (string s in r.AmountsList)
+                        {
+                            <div class="row bg-light">@s</div>
+                        }
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-md-12">Instructions:</div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-md-12">@r.Instructions</div>
+                </div>
+                <br />
+                @if (r.Rating != 0)
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Rating: @r.Rating</h6>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>
+                                    <h6>Rate This Recipe:</h6>
+                                </label>
+                            </div>
+                            <div class="col-md-3"><input name="r"> </div>
+                            <div class="col-md-3"><input name="id" value="@r.Id" /></div>
+                            <div class="col-md-3"><button type="submit" class="btn-info">Submit</button></div>
+                        </div>
+                    </form>
+                }
+            </div>
+            <br />
+        }
+    }
+</body>
+</html>

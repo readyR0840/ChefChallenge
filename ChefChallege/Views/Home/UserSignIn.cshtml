@@ -1,0 +1,36 @@
+﻿@model User
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <div class="jumbotron bg-secondary">
+        <div class="container bg-secondary text-white-50">
+            <h1 class="text-center"><strong>User Sign Up</strong></h1>
+        </div>
+        <form method="post">
+            <div class="p-4 m-2 alert-info p-3 m-3">
+                <div class="row form-group m-2 p-2">
+                    <div class="col-md-2"><label asp-for="UserName"><h6>UserName:</h6></label></div>
+                    <div class="col-md-2"><input asp-for="UserName" class="form-control" /></div>
+
+                    <div class="col-md-2"><label asp-for="Age"><h6>Age:</h6></label></div>
+                    <div class="col-md-2"><input asp-for="Age" class="form-control" /></div>
+                    
+                    <div class="col-md-2"><label asp-for="State"><h6>State:</h6></label></div>
+                    <div class="col-md-2"><textarea asp-for="State" class="form-control"></textarea></div>
+                </div>
+
+                <div class="row form-group m-2 p-2">
+                    <div class="col-lg-2"><label asp-for="Experience"><h6>Experience:</h6></label></div>
+                    <div class="col-lg-10"><textarea asp-for="Experience" class="form-control"></textarea></div>
+                </div>
+                
+                <button type="submit" class="btn-info">Submit</button>
+            </div>
+        </form>
+    </div>
+    </body>
+</html>
